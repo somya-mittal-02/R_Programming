@@ -1,0 +1,46 @@
+#METHOD 1 BY USING FOR LOOP
+
+#creating a random Dna sequence using sample function
+nucleotides= c("A", "C", "G", "T")
+dna= sample(nucleotides, 20, replace= TRUE)
+print(dna)
+length1= length(dna) #checking length of dna sample
+print(length1)
+
+#initializing the counters
+a=0; c=0; g=0; t=0
+
+#loop for counting and calculation gc content 
+for (i in 1:length1){
+  if(dna[i]== "A"){a=a+1}
+  if(dna[i]== "C"){c=c+1}
+  if(dna[i]== "G"){g=g+1}
+  if(dna[i]== "T"){t=t+1}
+}
+gc= (g+c)/length1*100     #gc content in %
+cat("a, t, g, c, gc%", a, t, g, c, gc)   #use cat for printing many of the data
+gcc= g+c     #sum of g and c nucleotides
+gcc
+
+#METHOD 2 BY USING STRINGR PACKAGE 
+
+install.packages("stringr")
+library(stringr)
+dna= paste(dna, collapse = "")   #pasting the whole seq together 
+print(dna)
+length2= length(dna)
+print(length2)      #now length is 1 as it is a single value
+
+a= str_count(dna, "A")
+t= str_count(dna, "T")
+g= str_count(dna, "G")
+c= str_count(dna, "C")
+cat("a, t, g, c", a, t, g, c)
+
+#METHOD 3-- USING STRING AND LOOP
+library(stringr)
+nuc= c("A", "T", "G", "C")
+for(x in nuc){
+  p_count= sum(str_count(dna, x))
+  cat(x, p_count, "\n")
+}
