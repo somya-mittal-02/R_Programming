@@ -1,0 +1,81 @@
+#creating a list of marks of 5 subs 
+marks= c(85, 90, 78, 100, 88)
+print(marks)
+
+#checking the length of the list
+length(marks)
+
+#accessing marks by position #(start from 1)
+marks[1]
+
+#checking datatype
+class(marks)
+
+#check vector summary 
+summary(marks)
+
+#sum command 
+print(sum(marks))
+
+#sum in a nice way
+total_marks= sum(marks)
+print(paste("total marks = ", total_marks))
+
+#mean command 
+avg_mean= mean(marks)
+print(paste("mean value is = ", avg_mean))
+
+#find median 
+median_value= median(marks)
+print(paste("median value is = ", median_value))
+
+#round off value of mean
+avg= mean(marks)
+print(paste("mean= ", round(avg)))
+
+#hw: round off upto any decimal places
+
+#double marks 
+print(marks*2)
+
+#half marks 
+print(marks/2)
+
+#multiplication of 2 vectors 
+a= c(1, 2, 3)
+b= c(4, 5, 6)
+ab= a*b
+print(ab)
+
+#divison 
+abdiv= a/b
+print(abdiv)
+
+#multiply or divide individually
+ab[1]
+ab[3]
+abdiv[2]
+ab[4] #invalid
+
+#combining vectors a, b, than again a 
+z= c(a,b,a)
+print(z)
+length(z)
+
+#character vector 
+my_name= c("my","name","is","somya")
+print(my_name)
+class(my_name)
+summary(my_name)
+length(my_name)
+
+#vector with character and number both
+numbers= c(1, "two", 3, "four")  #now numbers also treated as characters
+numbers
+class(numbers)
+num1= numbers[1]
+print(num1)
+class(num1)
+num1+ 1  #shows error because it is character according 
+
+as.integer(num1)+2   #still want to treat it as numeric value 
