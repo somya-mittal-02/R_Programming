@@ -1,0 +1,27 @@
+#get access of inbuilt datasets in R
+
+#1. to get the list of datasets available
+data()
+
+#or the other method:-
+ls("package:datasets")
+
+#datasets available in all packages
+data(package= .packages(all.available= TRUE))
+
+#example- acessing a "iris" dataset
+data("iris")
+View(iris)
+summary(iris)
+
+#creating a file and writting the data in it. 
+write.table(iris, "iris_dataset.txt", append= FALSE)
+file.show("iris_dataset.txt")
+
+#if dont want qoutes in file
+write.table(iris, "iris_dataset.txt", append= FALSE, quote= FALSE)
+file.show("iris_dataset.txt")
+
+#if you dont want row numbers 
+write.table(iris, "iris_dataset.txt", append= FALSE, quote= FALSE, row.names= FALSE)
+file.show("iris_dataset.txt")
